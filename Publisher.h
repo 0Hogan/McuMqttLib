@@ -11,6 +11,11 @@ namespace Mqtt
     class Publisher : protected PubSubBase
     {
     public:
+        /**
+         * @brief Construct a new Publisher object
+         * 
+         * @param client The connection to the client to which the publisher sends messages.
+         */
         Publisher(Adafruit_MQTT_Client* client) : PubSubBase(client)
         {
             msgType msg;
@@ -35,7 +40,7 @@ namespace Mqtt
         }
 
     private:
-        Adafruit_MQTT_Publish* m_publisher = nullptr;
+        Adafruit_MQTT_Publish* m_publisher = nullptr; ///< The Adafruit implementation of an MQTT Publisher.
     };
 }
 
